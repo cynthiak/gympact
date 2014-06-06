@@ -1,0 +1,45 @@
+#home_wrapper {
+	padding: 200px 100px;
+
+	/* [USING SASS] Responsive: When screen gets to be below 950px and 600px respectively,
+	set the padding to 100px 50px and 100px 25px 
+	Read more: http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 */
+	@media screen and (max-width: 950px) {
+		padding: 100px 50px;
+	}
+	@media screen and (max-width: 600px) {
+		padding: 100px 25px;
+	}
+
+
+	button{
+		padding: 80px 25px 75px 25px;
+		font-family: $headings-font-family; /* [USING SASS] these variables can be set in assets/stylesheets/partials/_variables.scss */
+		font-weight: $headings-font-weight;
+		font-size: $font-size-h1;
+		border: 0;
+		background: $turquoise;
+		overflow: auto;
+
+		/* [USING SASS] This 'a' is nested inside 'button', 
+		which means this compiles to 'button a {}' */
+		a {
+			color: #fff;
+
+			/* [USING SASS] This compiles to a:hover {...}. 
+			Using & means to refer to the parent selector, in this case the 'a' */
+			&:hover {text-decoration: none;} 
+		}
+
+		/* [USING SASS] This compiles to button:hover {...} */
+		&:hover {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+  		filter: alpha(opacity=85);/* IE 5-7 */
+  		-moz-opacity: 0.85; /* Netscape */
+  		-khtml-opacity: 0.85;/* Safari 1.x */
+  	  opacity: 0.85;/* Good browsers */
+		}
+
+	}
+}
+	

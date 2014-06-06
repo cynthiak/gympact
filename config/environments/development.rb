@@ -34,4 +34,7 @@ Gympact::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Told to add for devise gem (to add users) - need to set so user knows which server mail come from
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

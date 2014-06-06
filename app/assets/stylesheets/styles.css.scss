@@ -1,7 +1,33 @@
-@import 'bootstrap';
-@import 'bootstrap-responsive';
+/* VARIABLES*/
+@import "partials/variables";
+
+/* VENDORS [using Twitter's Bootstrap for base styles] */
+@import "bootstrap";
+
+/* PARTIALS */
+@import "partials/typography";
+@import "partials/layout";
+@import "partials/sidebar";
+
+/* PAGES */
+@import "partials/home";
 
 
-body {
-	padding: 50px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

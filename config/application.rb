@@ -63,5 +63,6 @@ module Gympact
 
     # Added 6.3.14 per https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
     config.assets.initialize_on_precompile = false
+
   end
 end

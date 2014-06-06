@@ -1,0 +1,89 @@
+
+/************************************************* 
+SIDEBAR
+**************************************************/
+
+#sidebar {
+  background: #1D2027;
+  
+	#logo {
+		padding: 35px 0px;
+		background: $turquoise;
+	}
+
+  /* GROUPS ***************************************/
+  .group-wrapper{
+    padding: 35px 0 25px 0;
+    &.active {
+      background: #262A32;
+    }
+
+    /* HEADLINE */
+    span.title {
+      font-size: 11px;
+      color: #7F8694;
+      display: block;
+      padding: 0px 25px 15px 25px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    /* MENU ITEMS */
+    ul.nav > li {
+      margin: 0;
+    }
+    ul.nav > li > a{
+        border-radius: 0px;
+        color: #7F8694;
+        padding: 10px 25px 10px 20px;
+        border-left: 5px solid transparent;
+        
+        span.glyphicon {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background: #383D46;
+          border-left: 5px solid $turquoise;
+          color: #fff;
+        }
+      }
+    ul.nav > li.active > a{
+      background: transparent;
+      border-left: 5px solid $turquoise;
+      color: #fff;
+
+      &:hover {
+        background: #383D46;
+        border-left: 5px solid $turquoise;
+        color: #fff;
+      }
+    }
+  } /*.group-wrapper*/
+  
+  #add {
+    padding: 20px 25px;
+
+    button {
+      text-align: left;
+      padding: 10px 20px;
+
+      &.btn-default {
+        background: transparent;
+        border: 1px solid #7F8694;
+        color: #7F8694;
+      }
+      &.btn-default:hover {
+        border: 1px solid #fff;
+        color: #fff; 
+      }
+
+      .glyphicon {
+        margin-right: 5px;
+      }
+    }
+  } /* #add */
+
+
+
+} /* #sidebar */
