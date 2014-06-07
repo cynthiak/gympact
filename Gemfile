@@ -26,4 +26,5 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'jquery-rails'
 
 # For creating users
-gem 'devise'
+# gem 'devise'
+# gem 'simple_form'
