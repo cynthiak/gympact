@@ -1,5 +1,5 @@
 #home_wrapper {
-	padding: 200px 100px;
+	padding: 100px 100px 0px 100px;
 
 	/* [USING SASS] Responsive: When screen gets to be below 950px and 600px respectively,
 	set the padding to 100px 50px and 100px 25px 
@@ -18,7 +18,7 @@
 		font-weight: $headings-font-weight;
 		font-size: $font-size-h1;
 		border: 0;
-		background: $turquoise;
+		background: $blue;
 		overflow: auto;
 
 		/* [USING SASS] This 'a' is nested inside 'button', 

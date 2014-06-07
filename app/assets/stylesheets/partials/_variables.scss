@@ -1,5 +1,6 @@
 /* Defining colors */
-$turquoise: #5CB1C4;
+$blue: #5CB1C4;
+$lightblue: #DAF8FF;
 
 /* Importing Google Fonts */
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Lato:300,400|Open+Sans:400,300);
@@ -12,7 +13,7 @@ $line-height-base: 1.8;
 
 /* Changing the color of link text
 See: http://getbootstrap.com/customize */
-$brand-primary: $turquoise;
+$brand-primary: $blue;
 
 /* Changing the color of header text
 See: http://getbootstrap.com/customize */

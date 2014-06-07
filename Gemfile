@@ -26,5 +26,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'jquery-rails'
 
 # For creating users
-# gem 'devise'
+gem 'devise'
 # gem 'simple_form'
+
+# Creating admin interface
+# gem 'rails_admin'
+# gem "activeadmin", github: "gregbell/active_admin"

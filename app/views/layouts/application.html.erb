@@ -12,16 +12,14 @@
 
 <div id="wrapper">
     <div id="sidebar-wrapper">
-    		<div id="sidebar">
-        	<%= render 'layouts/sidebar' %>
-      	</div><!--/sidebar-->
+        <%= render 'layouts/sidebar' %>
     </div><!--/sidebar-wrapper-->
     <div id="page-content-wrapper">
         <div class="page-content">
+            <%= render 'layouts/header' %>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-
                         <!-- ALERTS per Devise gem for users -->
                         <% flash.each do |name, msg| %>
                           <%= content_tag(:div, msg, class: "alert alert-#{name}") %>

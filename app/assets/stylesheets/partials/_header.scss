@@ -1,0 +1,19 @@
+#header {
+	width: 100%;
+  background: #66C4D9;
+	height: 100px;
+	padding-top: 28px;
+	padding-right: 50px;
+
+	a {
+		color: #408B9D;
+		font-size: 25px;
+		&:hover {color: #fff;}
+	}
+
+	.icon {
+		margin: 0 20px;
+		float: right;
+		display: inline-block;
+	}
+}
