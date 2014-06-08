@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140608050300) do
+ActiveRecord::Schema.define(:version => 20140608155133) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -62,9 +62,21 @@ ActiveRecord::Schema.define(:version => 20140608050300) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "chat_id"
+    t.integer  "user_id"
   end
 
   add_index "messages", ["chat_id"], :name => "index_chat_id"
+  add_index "messages", ["user_id"], :name => "index_user_id"
+
+  create_table "pact_user_relations", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "pact_id"
+    t.integer  "user_id"
+  end
+
+  add_index "pact_user_relations", ["pact_id"], :name => "index_pact_id_5"
+  add_index "pact_user_relations", ["user_id"], :name => "index_user_id_4"
 
   create_table "pacts", :force => true do |t|
     t.string   "pact_name"
@@ -90,7 +102,10 @@ ActiveRecord::Schema.define(:version => 20140608050300) do
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "message_id"
   end
+
+  add_index "photos", ["message_id"], :name => "index_message_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -112,7 +127,12 @@ ActiveRecord::Schema.define(:version => 20140608050300) do
     t.float    "paid"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "pact_id"
+    t.integer  "user_id"
   end
+
+  add_index "weeks", ["pact_id"], :name => "index_pact_id_3"
+  add_index "weeks", ["user_id"], :name => "index_user_id_2"
 
   create_table "workout_types", :force => true do |t|
     t.string   "workout_type"
@@ -134,6 +154,11 @@ ActiveRecord::Schema.define(:version => 20140608050300) do
     t.boolean  "is_makeup_workout"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.integer  "user_id"
+    t.integer  "week_id"
   end
+
+  add_index "workouts", ["user_id"], :name => "index_user_id_3"
+  add_index "workouts", ["week_id"], :name => "index_week_id"
 
 end
