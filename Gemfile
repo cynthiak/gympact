@@ -31,4 +31,7 @@ gem 'devise'
 
 # Creating admin interface
 # gem 'rails_admin'
-# gem "activeadmin", github: "gregbell/active_admin"
+gem 'activeadmin', github: "gregbell/active_admin"
+
+# Better errors
+gem 'better_errors'
