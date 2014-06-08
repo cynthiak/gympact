@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140608025416) do
+ActiveRecord::Schema.define(:version => 20140608050300) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(:version => 20140608025416) do
     t.text     "chat"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "pact_id"
   end
+
+  add_index "chats", ["pact_id"], :name => "index_pact_id_2"
 
   create_table "messages", :force => true do |t|
     t.text     "message"
@@ -58,7 +61,10 @@ ActiveRecord::Schema.define(:version => 20140608025416) do
     t.time     "time_sent"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "chat_id"
   end
+
+  add_index "messages", ["chat_id"], :name => "index_chat_id"
 
   create_table "pacts", :force => true do |t|
     t.string   "pact_name"
@@ -74,7 +80,10 @@ ActiveRecord::Schema.define(:version => 20140608025416) do
     t.float    "penalty"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "pact_id"
   end
+
+  add_index "penalties", ["pact_id"], :name => "index_pact_id"
 
   create_table "photos", :force => true do |t|
     t.string   "photo_url"
@@ -109,7 +118,10 @@ ActiveRecord::Schema.define(:version => 20140608025416) do
     t.string   "workout_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "workout_id"
   end
+
+  add_index "workout_types", ["workout_id"], :name => "index_workout_id"
 
   create_table "workouts", :force => true do |t|
     t.float    "distance"

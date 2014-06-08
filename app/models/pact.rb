@@ -5,7 +5,7 @@ class Pact < ActiveRecord::Base
 	has_many :messages, through: :chats
 
 	has_many :penalties
-	
+
 	has_many :weeks
 	has_many :workouts, through: :weeks
 
