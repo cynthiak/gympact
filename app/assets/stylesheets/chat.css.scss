@@ -1,3 +1,80 @@
-// Place all the styles related to the Chat controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#chat_wrapper {
+
+	/* CHAT ***************************/
+	#chat {
+		padding-top: 25px;
+
+		.chat-row {
+			display: block;
+			padding: 0px 25px 25px 25px;
+			overflow: hidden;
+
+			.avatar {
+				margin-bottom: 15px;
+			}
+			.message {
+				padding: 25px;
+				background: #fff;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+
+				span.name {
+					font-weight: bold;
+					color: $blue;
+					margin-bottom: 15px;
+				}
+				span.datetime {
+					color: $gray-light;
+					font-size: 14px; 
+					float: right;
+				}
+				span.content {
+					display: block;
+					img.photo {
+						margin-top: 10px;
+						width: 50%;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
+						border-radius: 5px;
+					}
+				}
+			}
+			
+
+
+
+
+		} /* .chat-row */
+		
+	} /* #chat */
+
+
+
+
+	/* PHOTO ***************************/
+	#photo_editor {
+		padding-right: 0;
+		background: #fff;
+		height: 100%;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

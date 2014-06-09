@@ -16,7 +16,10 @@
         <%= link_to raw("<span class='glyphicon glyphicon-user'></span>Tracking"), about_path, class: 'tracking' %> 
       </li>
       <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>This Week"), about_path, class: 'week' %> 
+        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>Weeks"), about_path, class: 'week' %> 
+      </li>
+      <li>
+        <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>Upload"), about_path, class: 'upload' %> 
       </li>
     </ul>
   </div>
@@ -32,21 +35,12 @@
         <%= link_to raw("<span class='glyphicon glyphicon-user'></span>Tracking"), about_path, class: 'tracking' %> 
       </li>
       <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>This Week"), about_path, class: 'week' %> 
+        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>Week"), about_path, class: 'week' %> 
+      </li>
+      <li>
+        <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>Upload"), about_path, class: 'upload' %> 
       </li>
     </ul>
   </div>
-
-  <div id="add" class="group-wrapper">
-    <button type="button" class="btn btn-default btn-md btn-block">
-      <span class='glyphicon glyphicon-plus'></span> 
-      Upload chat
-    </button>
-
-    <button type="button" class="btn btn-default btn-md btn-block">
-      <span class='glyphicon glyphicon-plus'></span> 
-      Add charge
-    </button>
-  </div><!--/#add-->
 
 </div><!--/#sidebar-->

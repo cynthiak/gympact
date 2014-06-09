@@ -1,8 +1,8 @@
 #header {
   background: #66C4D9;
   width: 100%;
-  margin-left: -250px;
 	height: 100px;
+	margin-left: -250px;
 	padding-top: 28px;
 	padding-right: 50px;
 	position: fixed;
@@ -17,4 +17,12 @@
 		display: inline-block;
 		&:hover {color: #fff;}
 	}
+
+}
+
+@media (max-width:767px) {
+	#header {
+		margin-left: 0px;
+	}
+
 }
