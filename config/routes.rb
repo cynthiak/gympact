@@ -15,6 +15,7 @@ Gympact::Application.routes.draw do
 
   # PACT PAGES
   get 'chat/:pact_id'           => "chat#show"      # Chat for pact_id
+  # get 'chat/:pact_id/:week_id'  => "chat#show"      # Chat for pact_id
   get 'tracking/:pact_id'       => "tracking#show"  # Tracking for pact_id
   get 'week/:pact_id/:week_id'  => "week#show"      # week_id for pact_id
 

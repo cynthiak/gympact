@@ -5,4 +5,6 @@ class Message < ActiveRecord::Base
   belongs_to :user
 
   has_one :photo
+
+  alias_attribute :name, :message
 end

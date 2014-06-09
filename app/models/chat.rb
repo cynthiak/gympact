@@ -4,5 +4,7 @@ class Chat < ActiveRecord::Base
 
 	belongs_to :pact
 
+	alias_attribute :name, :created_at 
+	
   attr_accessible :chat
 end

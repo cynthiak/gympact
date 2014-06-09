@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
 	has_many :weeks
 	has_many :workouts	
 
-  attr_accessible :first_name, :last_name, :username, :avatar_url, :email
+	alias_attribute :name, :photo_url
+
+  attr_accessible :first_name, :username, :username, :avatar_url, :email
 end
