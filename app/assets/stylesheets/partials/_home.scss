@@ -8,7 +8,7 @@
 		padding: 100px 50px;
 	}
 	@media screen and (max-width: 600px) {
-		padding: 100px 25px;
+		padding: 100px 0;
 	}
 
 
@@ -20,6 +20,11 @@
 		border: 0;
 		background: $blue;
 		overflow: auto;
+		margin: auto;
+		width: 99%;
+
+		&.btn-left {margin-right: 20px;}
+		&.btn-right {margin-left: 20px;}
 
 		/* [USING SASS] This 'a' is nested inside 'button', 
 		which means this compiles to 'button a {}' */
@@ -39,7 +44,6 @@
   		-khtml-opacity: 0.85;/* Safari 1.x */
   	  opacity: 0.85;/* Good browsers */
 		}
-
 	}
 }
 	

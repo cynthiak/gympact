@@ -3,31 +3,68 @@
 	<%= render 'chat/menu' %>
 	
 	<div id="chat">
+
+		<!--CHAT-ROW************************** -->
 		<div class="chat-row container-fluid">
 			<div class="col-md-1 text-center">
 				<%= image_tag ("avatars/cynthiakoo.jpg"), class: 'avatar' %>
 			</div>
-			<div class="message col-md-11">
-				<span class="name">Cynthia Koo</span>
-				<span class="datetime">Tuesday, June 10, 2014 5:15PM</span>
-				<span class="content">
-					start show hi show <br>hi show hi show hi show hi show hi show hi show hi show hi show hi<br> show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi 
-				</span>
-			</div>
+			<div class="col-md-11 chat_content_container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="message col-md-6">
+							<span class="name">Cynthia Koo</span>
+							<span class="datetime">Tuesday, June 10, 2014 5:15PM</span>
+							<span class="content">
+									start show hi show <br>hi show hi show hi show hi show hi show hi show hi show hi show hi<br>show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi
+							</span>
+						</div>
+					</div><!--/.row-->
+				</div><!--/.container-fluid-->
+			</div><!--/.chat_content_container-->
 		</div><!--/.chat-row-->
 
-
+		<!--CHAT-ROW************************** -->
 		<div class="chat-row container-fluid">
 			<div class="col-md-1 text-center">
 				<%= image_tag ("avatars/cynthiakoo.jpg"), class: 'avatar' %>
 			</div>
-			<div class="message col-md-11">
-				<span class="name">Cynthia Koo</span>
-				<span class="datetime">Tuesday, June 10, 2014 5:15PM</span>
-				<span class="content">
-					<%= image_tag ("avatars/cynthiakoo.jpg"), class: 'photo' %>
-				</span>
+			<div class="col-md-11 chat_content_container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="message col-md-6">
+							<span class="name">Cynthia Koo</span>
+							<span class="datetime">Tuesday, June 10, 2014 5:15PM</span>
+							<span class="content">
+									start show hi show <br>hi show hi show hi show hi show hi show hi show hi show hi show hi<br>show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi show hi
+							</span>
+						</div>
+					</div><!--/.row-->
+				</div><!--/.container-fluid-->
+			</div><!--/.chat_content_container-->
+		</div><!--/.chat-row-->
+
+		<!--CHAT-ROW************************** -->
+		<div class="chat-row container-fluid">
+			<div class="col-md-1 text-center">
+				<%= image_tag ("avatars/cynthiakoo.jpg"), class: 'avatar' %>
 			</div>
+			<div class="col-md-11 chat_content_container photo_container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="message col-md-6">
+							<span class="name">Cynthia Koo</span>
+							<span class="datetime">Tuesday, June 10, 2014 5:15PM</span>
+							<span class="content">
+								<%= image_tag ("avatars/cynthiakoo.jpg"), class: 'photo' %>
+							</span>
+						</div>
+						<div class="edit_photo col-md-6">
+							<%= render 'chat/edit_photo' %>
+						<div><!--/.edit_photo-->
+					</div><!--/.row-->
+				</div><!--/.container-fluid-->
+			</div><!--/.chat_content_container-->
 		</div><!--/.chat-row-->
 
 
