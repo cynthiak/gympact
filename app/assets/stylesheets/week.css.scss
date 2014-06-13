@@ -3,58 +3,20 @@
 	/* WEEK ***************************/
 	#week {
 		
-		/* TABLE ***************************/
+		/* TABLE COLUMNS */
 		.table {
-			thead th{
-				font-family: $headings-font-family;
-				font-weight: normal;
-				font-size: 16px;
-				color: #A2A5AE;
-				background: $bglightgray;
-			}
-			th, td {
-				border-bottom: 1px solid $grayborder;
-				padding: 20px 10px;
-				text-align: center;
-				text-align: middle;
-			}
-			td {background: #fff;}
-
-			/* COLUMNS */
-			.status {padding-left: 30px;}
-			.name {
-				text-align: left;
-			}
-			.status, .day {
-				.glyphicon {font-size: 16px;}
-				.glyphicon-ok-sign {color: $green;}
-				.glyphicon-question-sign {color: $gray-light;}
-				.glyphicon-remove-sign,
-				.glyphicon-ban-circle {color: $red;}
-			}
-			.monday, .total, .charge {
+			.status {padding-left: 20px; }
+			.name {text-align: left; padding-left: 0px;}
+			.monday, .total, .charge, .goal, .left, .bonus{
 				border-left: 1px solid $grayborder;}
 
-
-			th.left {
-				background: #A2A5AE; color: #fff;
-				border-left: 1px solid #A2A5AE;
-				border-right: 1px solid #A2A5AE;
-			}
-			td.left {
-				border-left: 1px solid $grayborder;
-				border-right: 1px solid $grayborder;
-			}
 			.paid {
-				padding-right: 30px;
-
 				.btn {
 					margin-top: -5px;
 					margin-bottom: -5px;
 				}
 			}
-
-		} /*.table*/
+		}/*.table*/
 	}/*#week*/
 
 

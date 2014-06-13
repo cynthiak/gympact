@@ -1,3 +1,25 @@
-// Place all the styles related to the Tracking controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#tracking_wrapper {
+	#tracking {
+
+		/* TABLE COLUMNS */
+		.table {
+			.name {text-align: left; padding-left: 30px;}
+			.name, .total, .missed, .charge, .paid {
+				border-right: 1px solid $grayborder;
+			}
+
+			thead th.week {
+				padding-top: 5px !important;
+				padding-bottom: 5px !important;
+			}
+
+			th.dates {
+				border-bottom: 1px solid $grayborder;}
+			.owed, .completed, .dates 
+			{border-right: 1px solid $grayborder;}
+
+		}/*.table*/
+
+
+	}/*tracking*/
+}/*#tracking_wrapper*/
