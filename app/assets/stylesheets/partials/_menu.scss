@@ -27,9 +27,11 @@
 			-webkit-border-radius: 0px;
 			-moz-border-radius: 0px;
 			border-radius: 0px;
-			font-size: 17px;		
+			font-size: 17px;
+			font-weight: 600;	
 		}
-		.btn-left-border {border-left: 1px solid $grayborder;}
+		.btn-left-border {
+			border-left: 1px solid $grayborder;}
 
 		/* BUTTON HOVER AND ACTIVE STATES */
 		.btn-default:hover,
@@ -52,6 +54,7 @@
 		span.smalltext {
 			margin-left: 5px;
 			color: #C9CCD4;
+			font-weight: 400;
 		}
 
 
