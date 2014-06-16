@@ -2,20 +2,16 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-6 align-center col-md-6">
-				<button type="button" class="btn btn-default btn-left">
-					<%= image_tag("icons/users.png", :class=> 'center-block') %>
-					<%= link_to "GymPact 2.0", root_path %>
-				</button>
-				<br>
-		</div>
 
+		<% @pacts.each do |pact| %>
 		<div class="col-lg-6 align-center col-md-6">
-				<button type="button" class="btn btn-default btn-right">
-					<%= image_tag("icons/users.png", :class=> 'center-block') %>
-					<%= link_to "GymPact 2.1", root_path %>
-				</button>
+				<%= link_to pact.name, chat_path(pact), class: 'btn btn-active btn-default pull-right' %> 
+
+			
 		</div>
+		<% end %>
+
+		
 	</div><!--/.row-->
 </div><!--/.container-fluid-->
 

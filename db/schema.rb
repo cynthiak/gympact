@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609225011) do
+ActiveRecord::Schema.define(:version => 20140616013334) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -55,17 +55,32 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
 
   add_index "chats", ["pact_id"], :name => "index_pact_id_2"
 
-  create_table "messages", :force => true do |t|
-    t.text     "message"
-    t.date     "date_sent"
-    t.time     "time_sent"
+  create_table "goals", :force => true do |t|
+    t.integer  "goal"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "chat_id"
     t.integer  "user_id"
+    t.integer  "pact_id"
+    t.integer  "week_id"
   end
 
-  add_index "messages", ["chat_id"], :name => "index_chat_id"
+  add_index "goals", ["pact_id", "user_id", "week_id"], :name => "index_goals_on_pact_id_and_user_id_and_week_id", :unique => true
+  add_index "goals", ["pact_id"], :name => "index_pact_id_6"
+  add_index "goals", ["user_id"], :name => "index_user_id_5"
+  add_index "goals", ["week_id"], :name => "index_week_id_2"
+
+  create_table "messages", :force => true do |t|
+    t.text     "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "pact_id"
+    t.datetime "date_sent"
+    t.string   "photo_url"
+  end
+
+  add_index "messages", ["message", "pact_id"], :name => "index_messages_on_message_and_pact_id", :unique => true
+  add_index "messages", ["pact_id"], :name => "index_pact_id_4"
   add_index "messages", ["user_id"], :name => "index_user_id"
 
   create_table "pact_user_relations", :force => true do |t|
@@ -75,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.integer  "user_id"
   end
 
+  add_index "pact_user_relations", ["pact_id", "user_id"], :name => "index_pact_user_relations_on_pact_id_and_user_id", :unique => true
   add_index "pact_user_relations", ["pact_id"], :name => "index_pact_id_5"
   add_index "pact_user_relations", ["user_id"], :name => "index_user_id_4"
 
@@ -87,14 +103,17 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "pacts", ["pact_name"], :name => "index_pacts_on_pact_name", :unique => true
+
   create_table "penalties", :force => true do |t|
-    t.integer  "goal_days"
-    t.float    "penalty"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "goal",       :default => 0,   :null => false
+    t.float    "penalty",    :default => 0.0, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "pact_id"
   end
 
+  add_index "penalties", ["pact_id", "goal"], :name => "index_penalties_on_pact_id_and_goal", :unique => true
   add_index "penalties", ["pact_id"], :name => "index_pact_id"
 
   create_table "photos", :force => true do |t|
@@ -105,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.integer  "message_id"
   end
 
+  add_index "photos", ["message_id", "photo_url"], :name => "index_photos_on_message_id_and_photo_url", :unique => true
   add_index "photos", ["message_id"], :name => "index_message_id"
 
   create_table "users", :force => true do |t|
@@ -117,22 +137,19 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
   create_table "weeks", :force => true do |t|
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "week_number"
-    t.integer  "goal_days"
-    t.integer  "missed_days"
-    t.float    "charge"
-    t.float    "paid"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "pact_id"
-    t.integer  "user_id"
   end
 
+  add_index "weeks", ["pact_id", "week_number"], :name => "index_weeks_on_pact_id_and_week_number", :unique => true
   add_index "weeks", ["pact_id"], :name => "index_pact_id_3"
-  add_index "weeks", ["user_id"], :name => "index_user_id_2"
 
   create_table "workout_types", :force => true do |t|
     t.string   "workout_type"
@@ -141,6 +158,7 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.integer  "workout_id"
   end
 
+  add_index "workout_types", ["workout_id", "workout_type"], :name => "index_workout_types_on_workout_id_and_workout_type", :unique => true
   add_index "workout_types", ["workout_id"], :name => "index_workout_id"
 
   create_table "workouts", :force => true do |t|
@@ -156,12 +174,12 @@ ActiveRecord::Schema.define(:version => 20140609225011) do
     t.datetime "updated_at",          :null => false
     t.integer  "user_id"
     t.integer  "week_id"
-    t.date     "date"
-    t.time     "time"
     t.integer  "photo_id"
+    t.datetime "sent"
   end
 
   add_index "workouts", ["photo_id"], :name => "index_photo_id"
+  add_index "workouts", ["user_id", "photo_id"], :name => "index_workouts_on_user_id_and_photo_id", :unique => true
   add_index "workouts", ["user_id"], :name => "index_user_id_3"
   add_index "workouts", ["week_id"], :name => "index_week_id"
 

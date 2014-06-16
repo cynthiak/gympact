@@ -30,8 +30,10 @@
 						</th>
 					</tr>
 				</thead>
+
+				<% @pact_user_relations.each do |relation| %>
 				<tr>
-					<td class="name">Valentino Wong</td>
+					<td class="name"><%= relation.user.username %></td>
 					<td class="summary total">7</td>
 					<td class="summary missed">0</td>
 					<td class="summary charge">$0.00</td>
@@ -41,6 +43,7 @@
 					<td class="week completed ">7</td>
 					<td class="week owed">$0.00</td>
 				</tr>
+				<% end %>
 				
 				<tfoot>
 					<tr class="total">

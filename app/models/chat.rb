@@ -6,5 +6,5 @@ class Chat < ActiveRecord::Base
 
 	alias_attribute :name, :created_at 
 	
-  attr_accessible :chat
+  attr_accessible :chat, :pact_id
 end

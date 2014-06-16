@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
 	has_many :weeks
 	has_many :workouts	
 
-	alias_attribute :name, :photo_url
+	validates_uniqueness_of :email
 
-  attr_accessible :first_name, :username, :username, :avatar_url, :email
+	# Makes display nicer
+	alias_attribute :name, :username
+	def to_s
+  	"#{username}"
+  end
+
+  attr_accessible :first_name, :username, :last_name, :avatar_url, :email
 end

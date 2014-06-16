@@ -5,20 +5,22 @@ Gympact::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  # devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   # STATIC PAGES
   root :to              => 'pages#home'
   get 'about'           => 'pages#about'
+  get 'happybirthday'           => 'pages#happybirthday'
 
 
   # PACT PAGES
-  get 'chat/:pact_id'           => "chat#show"      # Chat for pact_id
-  # get 'chat/:pact_id/:week_id'  => "chat#show"      # Chat for pact_id
-  get 'tracking/:pact_id'       => "tracking#show"  # Tracking for pact_id
-  get 'week/:pact_id/:week_id'  => "week#show"      # week_id for pact_id
-  get 'week/email/:pact_id/:week_id'  => "week#email"      # week_id for pact_id
+  get 'chat/:pact_id'                 => 'chat#show',     as: 'chat'       # Chat for pact_id
+  get 'chat/:pact_id/:week_id'        => 'chat#week',     as: 'chat_week'  # Chat for pact_id
+
+  get 'tracking/:pact_id'             => 'tracking#show', as: 'tracking'   # Tracking for pact_id
+
+  get 'week/:pact_id'                 => 'week#show',     as: 'week'       # week_id for pact_id
+  get 'week/:pact_id/:week_id'        => 'week#show',     as: 'week_week'       # week_id for pact_id
+  get 'email/:pact_id/'               => 'week#email',    as: 'email' # week_id for pact_id
+  get 'email/:pact_id/:week_id'       => 'week#email',    as: 'email_week' # week_id for pact_id
 
 
 

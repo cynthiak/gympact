@@ -12,7 +12,7 @@
 	}
 
 
-	button{
+	.btn{
 		padding: 80px 25px 75px 25px;
 		font-family: $headings-font-family; /* [USING SASS] these variables can be set in assets/stylesheets/partials/_variables.scss */
 		font-weight: $headings-font-weight;
@@ -22,19 +22,15 @@
 		overflow: auto;
 		margin: auto;
 		width: 99%;
+		color: #fff;
 
 		&.btn-left {margin-right: 20px;}
 		&.btn-right {margin-left: 20px;}
 
-		/* [USING SASS] This 'a' is nested inside 'button', 
-		which means this compiles to 'button a {}' */
-		a {
-			color: #fff;
-
-			/* [USING SASS] This compiles to a:hover {...}. 
-			Using & means to refer to the parent selector, in this case the 'a' */
-			&:hover {text-decoration: none;} 
-		}
+		
+		/* [USING SASS] This compiles to a:hover {...}. 
+		Using & means to refer to the parent selector, in this case the 'a' */
+		&:hover {text-decoration: none;} 
 
 		/* [USING SASS] This compiles to button:hover {...} */
 		&:hover {

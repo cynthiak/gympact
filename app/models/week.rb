@@ -3,5 +3,5 @@ class Week < ActiveRecord::Base
 
 	alias_attribute :name, :week_number
 
-  attr_accessible :charge, :end_date, :goal_days, :missed_days, :paid, :start_date, :week_number
+  attr_accessible :end_date, :start_date, :week_number, :pact_id
 end

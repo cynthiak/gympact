@@ -5,42 +5,27 @@
   </div><!--/#logo-->
 
 
-  <div class="group-wrapper active">
-    <span class="title">GymPact 2.0</span>
+  <% @pacts.each do |pact| %>
+    <div class="group-wrapper <% if @current_pact == pact %>active<% end %>">
+      <span class="title"><%= pact.name %></span>
 
-    <ul class="nav nav-pills nav-stacked">
-      <li class="active">
-        <%= link_to raw("<span class='glyphicon glyphicon-comment'></span>WhatsApp"), root_path, class: 'chat' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-user'></span>Tracking"), about_path, class: 'tracking' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>Weeks"), about_path, class: 'week' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>Upload Chat"), about_path, class: 'upload' %> 
-      </li>
-    </ul>
-  </div>
+      <ul class="nav nav-pills nav-stacked">
+        <li<% if current_page?(chat_path(pact)) %> class="active"<% end %>>
+          <%= link_to raw("<span class='glyphicon glyphicon-comment'></span>WhatsApp"), chat_path(pact), class: 'chat' %> 
+        </li>
+        <li<% if current_page?(tracking_path(pact)) %> class="active"<% end %>>
+          <%= link_to raw("<span class='glyphicon glyphicon-user'></span>Tracking"), tracking_path(pact), class: 'tracking' %> 
+        </li>
+        <li<% if current_page?(week_path(pact)) %> class="active"<% end %>>
+          <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>Weeks"), week_path(pact), class: 'week' %> 
+        </li>
+        <li>
+          <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>Upload Chat"), new_admin_chat_path, class: 'upload' %> 
+        </li>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="group-wrapper">
-    <span class="title">GymPact 2.1</span>
 
-    <ul class="nav nav-pills nav-stacked">
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-comment'></span> WhatsApp"), root_path, class: 'chat' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-user'></span>Tracking"), about_path, class: 'tracking' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>Weeks"), about_path, class: 'week' %> 
-      </li>
-      <li>
-        <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>Upload Chat"), about_path, class: 'upload' %> 
-      </li>
-    </ul>
-  </div>
 
 </div><!--/#sidebar-->
