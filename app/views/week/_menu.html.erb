@@ -8,17 +8,25 @@
 	      <span class="glyphicon glyphicon-chevron-down"></span>
 	    </button>
 	    <ul class="dropdown-menu">
-	      <li><a href="#">Dropdown link</a></li>
-	      <li><a href="#">Dropdown link</a></li>
+	    	<% @pact.weeks.each do |week| %>
+	      <li>
+	      	<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), week_week_path(@pact.id, week.id) %> 
+	    	</li>
+	    	<% end %>
 	    </ul>
 	  </div><!--/btn-group-->
 	 </div><!--/time_period-->
 
   <!-- DISPLAY -->
 	<div id="display" class="btn-group pull-right">
-		<%= link_to raw("<span class='glyphicon glyphicon-envelope'></span>"), email_path(@pact), class: 'btn btn-active btn-default pull-right' %> 
+		<% if current_page?(email_path(@pact)) %>
+			<%= link_to raw("<span class='glyphicon glyphicon-envelope'></span>"), email_path(@pact), class: 'btn btn-active btn-default pull-right' %> 
+			<%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>"), week_path(@pact), class: 'btn btn-default btn-left-border pull-right' %> 
+		<% else %>
+			<%= link_to raw("<span class='glyphicon glyphicon-envelope'></span>"), email_path(@pact), class: 'btn btn-default pull-right' %> 
+			<%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>"), week_path(@pact), class: 'btn btn-default btn-active btn-left-border pull-right' %> 
+		<% end %>
 
-		<%= link_to raw("<span class='glyphicon glyphicon-calendar'></span>"), week_path(@pact), class: 'btn btn-default btn-left-border pull-right' %> 
 
 
 	</div><!--/.btn-group-->

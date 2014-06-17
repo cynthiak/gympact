@@ -67,5 +67,10 @@ module Gympact
     # Per this warning: [deprecated] I18n.enforce_available_locales will default to true in the future. If you really want to skip validation of your locale you can set I18n.enforce_available_locales = false to avoid this message.
     config.i18n.enforce_available_locales = true
 
+    # Timezone
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+
+
   end
 end

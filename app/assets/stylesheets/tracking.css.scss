@@ -4,7 +4,7 @@
 		/* TABLE COLUMNS */
 		.table {
 			.name {text-align: left; padding-left: 30px;}
-			.name, .total, .missed, .charge, .paid {
+			.name, .total, .missed, .goal, .charge, .paid {
 				border-right: 1px solid $grayborder;
 			}
 

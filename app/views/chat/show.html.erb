@@ -15,7 +15,7 @@
 							<div class="row">
 								<div class="message col-md-6">
 									<span class="name"><%= message.user %></span>
-									<span class="datetime"><%= message.date_sent %></span>
+									<span class="datetime"><%= message.date_sent.strftime("%A, %B %d, %Y %I:%M%p") %></span>
 
 									<% if message.photo_url %>
 											<span class="content">
