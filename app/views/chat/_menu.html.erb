@@ -4,13 +4,20 @@
 
 	  <div class="btn-group">
 	  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	      WEEK 4 <span class="smalltext">June 9 - 16 (THIS WEEK)</span>
+					WEEK <%= @current_week.week_number %>
+					<span class="smalltext">
+						<%= @current_week.start_date.strftime("%b %d") %> - <%= @current_week.end_date.strftime("%b %d") %>
+					</span>
 	      <span class="glyphicon glyphicon-chevron-down"></span>
 	    </button>
 	    <ul class="dropdown-menu">
 	    	<% @pact.weeks.each do |week| %>
-	      <li>
-	      	<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), week_week_path(@pact.id, week.id) %> 
+	      	<li>
+	      		<% if week == @current_week %>
+	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@pact.id, week.id), class: 'active' %> 
+	      		<% else %>
+	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@pact.id, week.id) %> 
+	      		<% end %>
 	    	</li>
 	    	<% end %>
 	    </ul>

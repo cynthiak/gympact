@@ -58,7 +58,6 @@
 		}
 
 
-
 		/* DROPDOWN BUTTON STYLE */
 		.dropdown-toggle {
 			padding: 20px 24px 20px 30px;
@@ -88,12 +87,13 @@
 				a{
 					color: #A2A5AE;
 					padding: 10px 30px;
-					&:hover {
+					&:hover, &.active {
 						background: #fff;
 					}
 				}
 			}
 		}
+
 
 
 		

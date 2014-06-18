@@ -44,7 +44,8 @@ table.table {
 	th, td {
 		border-top: 0;
 		border-bottom: 1px solid $grayborder;
-		padding: 15px 10px !important;
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
 		text-align: center;
 		vertical-align: middle;
 	}

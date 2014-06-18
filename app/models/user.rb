@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :first_name, :username, :last_name, :avatar_url, :email
 
+
+
 	# Makes display nicer
 	alias_attribute :name, :username
 	def to_s
