@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   def current_pact
   	if(params.has_key?(:pact_id))
   		Pact.find(params[:pact_id])
+    else
+      Pact.first
   	end
   end
 
