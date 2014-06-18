@@ -21,4 +21,13 @@ class Pact < ActiveRecord::Base
 		User.joins(:pact_user_relations).where(pact_user_relations: { pact_id: self.id })
 	end
 
+	def get_current_week
+    today = Date.today
+    week = Week.where(["pact_id = ? and start_date < ? and end_date > ?", self.id, today, today]).first
+    if !week
+      week = Week.where(["pact_id = ?", self.id]).last
+    end
+    week
+  end
+
 end

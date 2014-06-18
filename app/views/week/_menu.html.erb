@@ -4,7 +4,10 @@
 
 	  <div class="btn-group">
 	  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	      WEEK 4 <span class="smalltext">June 9 - 16 (THIS WEEK)</span>
+					WEEK <%= @current_week.week_number %>
+					<span class="smalltext">
+						<%= @current_week.start_date.strftime("%b %d") %> - <%= @current_week.end_date.strftime("%b %d") %>
+					</span>
 	      <span class="glyphicon glyphicon-chevron-down"></span>
 	    </button>
 	    <ul class="dropdown-menu">
