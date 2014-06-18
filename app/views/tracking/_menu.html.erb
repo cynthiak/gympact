@@ -8,7 +8,7 @@
 	      <span class="glyphicon glyphicon-chevron-down"></span>
 	    </button>
 	    <ul class="dropdown-menu">
-	    	<% @pact.weeks.each do |week| %>
+	    	<% @current_pact.weeks.each do |week| %>
 	      <li>
 	      	<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), week_week_path(@pact.id, week.id) %> 
 	    	</li>

@@ -11,12 +11,12 @@
 	      <span class="glyphicon glyphicon-chevron-down"></span>
 	    </button>
 	    <ul class="dropdown-menu">
-	    	<% @pact.weeks.each do |week| %>
+	    	<% @current_pact.weeks.each do |week| %>
 	      	<li>
 	      		<% if week == @current_week %>
-	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@pact.id, week.id), class: 'active' %> 
+	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@current_pact.id, week.id), class: 'active' %> 
 	      		<% else %>
-	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@pact.id, week.id) %> 
+	      			<%= link_to raw("WEEK " + week.week_number.to_s + "<span class='smalltext'>" + week.start_date.strftime("%b %d") + " - " + week.end_date.strftime("%b %d") + "</span>"), chat_week_path(@current_pact.id, week.id) %> 
 	      		<% end %>
 	    	</li>
 	    	<% end %>
