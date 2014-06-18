@@ -48,11 +48,12 @@
 			border-radius: 5px;
 			border: 1px solid $grayborder;
 			padding: 10px;
+			text-align: left;
 
 
 			&.email_addresses {}
 			&.email_template {
-				height: 400px;
+				height: 300px;
 			}
 		}
 

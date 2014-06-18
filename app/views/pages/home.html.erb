@@ -1,18 +1,23 @@
 <div id="home_wrapper">
 
-<div class="container-fluid">
-	<div class="row">
+	<!-- "container-fluid", "row", and "col-lg-6" are Bootstrap grid classes: http://getbootstrap.com/css/#grid -->
+	<div class="container-fluid">
+		<div class="row">
 
-		<% @pacts.each do |pact| %>
-		<div class="col-lg-6 align-center col-md-6">
-				<%= link_to pact.name, chat_path(pact), class: 'btn btn-active btn-default pull-right' %> 
 
-			
-		</div>
-		<% end %>
+			<% # "For each 'pact' in the list of objects '@pacts', do... %>
+			<% @pacts.each do |pact| %>
+				<div class="align-center col-lg-6">
 
-		
-	</div><!--/.row-->
-</div><!--/.container-fluid-->
+					<% # This command translates to 
+						 # <a href=".../chat/{pact.id}/{week.id}" class="btn btn-active btn-default">{pact.name}</a> 
+						 # <a href="domain.com/chat/4/5" class="btn btn-active btn-default">GymPact 2.0</a>
+					%>
+					<%= link_to pact.name, chat_week_path(pact, pact.get_current_week), class: 'btn btn-active btn-default' %> 
+				</div>
+			<% end %>
+
+		</div><!--/.row-->
+	</div><!--/.container-fluid-->
 
 </div><!--/#home_wrapper-->

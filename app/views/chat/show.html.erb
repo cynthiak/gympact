@@ -1,45 +1,87 @@
 <div id="chat_wrapper" class="show">
 
+	<% # 'render' essentially copies and pastes another HTML file into here. This is done to keep code cleaner - especially useful if you have modules that you will reuse in multiple places. %>
 	<%= render 'chat/menu' %>
 	
+
 	<div id="chat">
 
+		<% # for each message in @messages, do... %>
 		<% @messages.each do |message| %>
-				<!--CHAT-ROW************************** -->
-				<div class="chat-row container-fluid <% if message.photo_url %>photo-row<% end %>">
-					<div class="col-md-1 text-center">
-						<%= image_tag message.user.avatar_url, class: 'avatar' %>
-					</div>
-					<div class="col-md-11 chat_content_container <% if message.photo_url %>photo_container<% end %>">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="message col-md-6">
-									<span class="name"><%= message.user %></span>
-									<span class="datetime"><%= message.date_sent.strftime("%A, %B %d, %Y %I:%M%p") %></span>
 
-									<% if message.photo_url %>
-											<span class="content">
-												<%= image_tag ("photos/" + message.photo_url), class: 'photo' %>
-											</span>
-										</div>
-										<div class="edit_photo col-md-6">
-											<%= render 'chat/edit_photo' %>
-										</div><!--/.edit_photo-->
-									<% else %>
-											<span class="content">
-												<%= message.message %>
-											</span>
-										</div>
-									<% end %>
-								
-							</div><!--/.row-->
-						</div><!--/.container-fluid-->
-					</div><!--/.chat_content_container-->
-				</div><!--/.chat-row-->
-		<% end %>
+			<!-- MESSAGE ************************** -->
+			<div class="container-fluid chat-row <% if message.photo_url %>photo-row<% end %>">
+
+				<!-- AVATAR ********************************** -->
+				<div class="avatar col-md-1 text-center">
+					<% # if the field message.user.avatar_url in the database does not equal an empty string
+						 # in other words, if a user does not have an avatar photo specified in the database
+						 # check out localadmin:3000/admin/users to check
+				  %>
+					<% if message.user.avatar_url != "" %>
+						<%= image_tag message.user.avatar_url, class: 'avatar' %>
+					<% else %>
+						<%= image_tag ("avatars/default.png"), class: 'avatar' %>
+					<% end %>
+				</div><!--/.avatar-->
+
+				<!-- CHAT CONTENT (TEXT OR PHOTO) ********************************** -->
+
+				<div class="col-md-11 chat_content_container <% if message.photo_url %>photo_container<% end %>">
+
+
+					<div class="container-fluid">
+						<div class="row">
+
+							<% # shorthand for if message.photo_url exists
+							   # essentially, if the message has a photo 
+							   # this is the layout to use
+							%>
+							<% if message.photo_url %>
+								<div class="message col-md-6">
+									<span class="name">
+										<%= message.user %>
+									</span>
+									
+									<span class="datetime">
+										<%= message.date_sent.strftime("%A, %B %d, %Y %I:%M%p") %>
+									</span>
+
+									<span class="content">
+										<%= image_tag ("photos/" + message.photo_url), class: 'photo' %>
+									</span>
+								</div><!--/.message-->
+								<div class="edit_photo col-md-6">
+									<%= render 'chat/edit_photo' %>
+								</div><!--/.edit_photo-->
+
+							<% # if it doesn't have a photo %>
+							<% else %>
+								<div class="message col-md-6">
+									<span class="name">
+										<%= message.user %>
+									</span>
+									
+									<span class="datetime">
+										<%= message.date_sent.strftime("%A, %B %d, %Y %I:%M%p") %>
+									</span>
+
+									<span class="content">
+										<%= message.message %>
+									</span>
+								</div><!--/.message-->
+							<% end %>
+							
+						</div><!--/.row-->
+					</div><!--/.container-fluid-->
+				</div><!--/.chat_content_container-->
+
+
+
+			</div><!--/.chat-row-->
+		<% end %><% # end for loop %>
 
 
 
 	</div><!--/#chat-->
-
 </div><!--/#chat_wrapper-->

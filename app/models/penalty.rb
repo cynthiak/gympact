@@ -1,8 +1,12 @@
 class Penalty < ActiveRecord::Base
 	
-  attr_accessible :goal, :penalty, :pact_id
-
+	#######################################################
+	# Specifies Associations
+	# Read more about Rails Associations here: http://guides.rubyonrails.org/association_basics.html
   belongs_to :pact
 
-  alias_attribute :name, :goal
+
+  #######################################################
+	# Makes it so that you can edit these database columns via ActiveAdmin and forms
+  attr_accessible :goal, :penalty, :pact_id
 end

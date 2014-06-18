@@ -1,26 +1,38 @@
 class Pact < ActiveRecord::Base
+
+	#######################################################
+	# Specifies Associations
+	# Read more about Rails Associations here: http://guides.rubyonrails.org/association_basics.html
 	has_many :users
 	has_many :pact_user_relations
 
 	has_many :chats
-	# has_many :messages, through: :chats
 
 	has_many :penalties
 
 	has_many :weeks
-	# has_many :workouts, through: :weeks
 
+	#######################################################
+	# Makes it so that when you print the "Pact" object, you print the pact_name instead of the "#<ActiveRecord>blahblah" object name
 	alias_attribute :name, :pact_name
 
+	#######################################################
+	# Makes it so that you can edit these database columns via ActiveAdmin and forms
   attr_accessible :end_date, :is_active, :pact_name, :start_date
 
 
 
-  # Methods
+	#######################################################
+  # OBJECT ACTIONS
+  # Actions you'd want to do on a Pact object
+  # Example: The way you would use these would be if in your HTML file, you want to get a list of all the pact's users. You will write <%= pact.get_users %> which would return an array (list) of user objects.
+
+
 	def get_users
 		User.joins(:pact_user_relations).where(pact_user_relations: { pact_id: self.id })
 	end
 
+	# gets the week that the pact is currently up to today
 	def get_current_week
     today = Date.today
     week = Week.where(["pact_id = ? and start_date < ? and end_date > ?", self.id, today, today]).first
