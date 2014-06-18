@@ -6,8 +6,8 @@ Gympact::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   # STATIC PAGES
-  root :to              => 'pages#home'
-  get 'about'           => 'pages#about'
+  root :to                      => 'pages#home'
+  get 'about'                   => 'pages#about'
   get 'happybirthday'           => 'pages#happybirthday'
 
 
