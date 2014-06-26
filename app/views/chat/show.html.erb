@@ -9,7 +9,7 @@
 			@messages.each do |message| %>
 
 			<!-- MESSAGE ************************** -->
-			<div class="container-fluid chat-row <% if message.photo_url %>photo-row<% end %>">
+			<div id="message-row-<%= message.id %>" class="container-fluid chat-row <% if message.photo_url %>photo-row<% end %>">
 
 				<!-- AVATAR ********************************** -->
 				<div class="avatar col-md-1 text-center">
@@ -23,7 +23,6 @@
 				<!-- CHAT CONTENT (TEXT OR PHOTO) ********************************** -->
 
 				<div class="col-md-11 chat_content_container <% if message.photo_url %>photo_container<% end %>">
-
 
 					<div class="container-fluid">
 						<div class="row">

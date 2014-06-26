@@ -13,19 +13,20 @@
 
 
 	.btn{
-		padding: 80px 25px 75px 25px;
+		padding: 130px 25px 40px 25px;
 		font-family: $headings-font-family; /* [USING SASS] these variables can be set in assets/stylesheets/partials/_variables.scss */
 		font-weight: $headings-font-weight;
 		font-size: $font-size-h1;
 		border: 0;
-		background: $blue;
 		overflow: auto;
-		margin: auto;
+		margin: 2px auto;
 		width: 99%;
 		color: #fff;
+		background-color: $blue;
+		background-image: image-url('icons/users.png');
+		background-repeat: no-repeat;
+		background-position: center 60px;
 
-		&.btn-left {margin-right: 20px;}
-		&.btn-right {margin-left: 20px;}
 
 		
 		/* [USING SASS] This compiles to a:hover {...}. 

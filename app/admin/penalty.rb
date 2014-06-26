@@ -1,6 +1,6 @@
 ActiveAdmin.register Penalty do
-	index do
-		selectable_column
+  index do
+	selectable_column
     column :id
     column :pact
     column :goal

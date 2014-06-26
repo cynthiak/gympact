@@ -1,4 +1,4 @@
-ActiveAdmin.register Pact do
+ActiveAdmin.register Pact, :as => 'Group' do
 
   
 end

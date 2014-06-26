@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :render_sidebar, :current_pact, :current_week
+  before_filter :render_sidebar, :current_pact, :current_week, :this_week
 
   def render_sidebar
-  	@pacts = Pact.where(is_active: true)
+  	@active_pacts = Pact.where(is_active: true)
 		@current_pact = current_pact
 		@current_week = current_week
     @this_week = this_week
