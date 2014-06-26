@@ -4,7 +4,6 @@
     <%= link_to raw("Gym<span>Pact</span>"), root_path %>
   </div><!--/#logo-->
 
-
   <% @active_pacts.each do |pact| %>
     <div class="group-wrapper <% if @current_pact == pact %>active<% end %>">
       <span class="title"><%= pact.name %></span>

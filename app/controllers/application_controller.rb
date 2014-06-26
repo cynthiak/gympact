@@ -28,11 +28,15 @@ class ApplicationController < ActionController::Base
 
   def this_week(pact=current_pact)
     today = Date.today
-    week = Week.where(["pact_id = ? and start_date <= ? and end_date >= ?", pact.id, today, today]).first
-    if !week
-      week = Week.where(["pact_id = ?", pact.id]).last
+    if pact
+      week = Week.where(["pact_id = ? and start_date <= ? and end_date >= ?", pact.id, today, today]).first
+      if !week
+        week = Week.where(["pact_id = ?", pact.id]).last
+      end
+      week
+    else
+      nil
     end
-    week
   end
 
 end
