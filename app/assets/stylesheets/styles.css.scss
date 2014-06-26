@@ -1,10 +1,10 @@
-/* VARIABLES*/
+/* SETTING VARIABLES TO USE THROUGHOUT THE REST OF THE STYLESHEETS */
 @import "partials/variables";
 
 /* VENDORS [using Twitter's Bootstrap for base styles] */
 @import "bootstrap";
 
-/* PARTIALS */
+/* PARTIALS [things that are used on more than one page]*/
 @import "partials/typography";
 @import "partials/layout";
 @import "partials/sidebar";
@@ -13,27 +13,7 @@
 @import "partials/menu";
 
 /* PAGES */
-@import "partials/home";
+@import "home";
 @import "chat";
 @import "week";
 @import "tracking";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

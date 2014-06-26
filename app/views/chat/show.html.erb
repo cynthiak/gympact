@@ -1,23 +1,18 @@
 <div id="chat_wrapper" class="show">
 
-	<% # 'render' essentially copies and pastes another HTML file into here. This is done to keep code cleaner - especially useful if you have modules that you will reuse in multiple places. %>
 	<%= render 'chat/menu' %>
 	
 
 	<div id="chat">
 
-		<% # for each message in @messages, do... %>
-		<% @messages.each do |message| %>
+		<% # for each message in @messages, do... 
+			@messages.each do |message| %>
 
 			<!-- MESSAGE ************************** -->
 			<div class="container-fluid chat-row <% if message.photo_url %>photo-row<% end %>">
 
 				<!-- AVATAR ********************************** -->
 				<div class="avatar col-md-1 text-center">
-					<% # if the field message.user.avatar_url in the database does not equal an empty string
-						 # in other words, if a user does not have an avatar photo specified in the database
-						 # check out localadmin:3000/admin/users to check
-				  %>
 					<% if message.user.avatar_url != "" %>
 						<%= image_tag message.user.avatar_url, class: 'avatar' %>
 					<% else %>
@@ -33,11 +28,8 @@
 					<div class="container-fluid">
 						<div class="row">
 
-							<% # shorthand for if message.photo_url exists
-							   # essentially, if the message has a photo 
-							   # this is the layout to use
-							%>
-							<% if message.photo_url %>
+							<% # shorthand for "if message.photo_url exists"
+								if message.photo_url %>
 								<div class="message col-md-6">
 									<span class="name">
 										<%= message.user %>
@@ -55,7 +47,6 @@
 									<%= render 'chat/edit_photo' %>
 								</div><!--/.edit_photo-->
 
-							<% # if it doesn't have a photo %>
 							<% else %>
 								<div class="message col-md-6">
 									<span class="name">
@@ -79,7 +70,7 @@
 
 
 			</div><!--/.chat-row-->
-		<% end %><% # end for loop %>
+		<% end %>
 
 
 

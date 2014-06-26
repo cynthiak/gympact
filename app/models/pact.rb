@@ -28,11 +28,12 @@ class Pact < ActiveRecord::Base
   # Example: The way you would use these would be if in your HTML file, you want to get a list of all the pact's users. You will write <%= pact.get_users %> which would return an array (list) of user objects.
 
 
+  # Gets users who are in this pact
 	def get_users
 		User.joins(:pact_user_relations).where(pact_user_relations: { pact_id: self.id })
 	end
 
-	# gets the week that the pact is currently up to today
+	# Gets the week that the pact is on as of today
 	def get_current_week
     today = Date.today
     week = Week.where(["pact_id = ? and start_date < ? and end_date > ?", self.id, today, today]).first
@@ -41,5 +42,36 @@ class Pact < ActiveRecord::Base
     end
     week
   end
+
+
+  # Get total stats for this pact
+  def get_total_workout_days
+  end
+
+  def get_total_goal_days
+  end
+
+  def get_total_missed_days
+  end
+
+  def get_total_owed
+  end
+
+  # Get weekly stats for this pact
+ 	def get_week_workout_days(current_week)
+ 	end
+
+ 	def get_week_goal_days(current_week)
+ 	end
+
+ 	def get_week_missed_days(current_week)
+ 	end
+
+	def get_week_bonus_days(current_week)
+ 	end
+
+ 	def get_week_money_owed(current_week)
+ 	end
+
 
 end
