@@ -27,8 +27,7 @@
 					<div class="container-fluid">
 						<div class="row">
 
-							<% # shorthand for "if message.photo_url exists"
-								if message.photo_url %>
+							<% if message.photo_url %>
 								<div class="message col-md-6">
 									<span class="name">
 										<%= message.user %>

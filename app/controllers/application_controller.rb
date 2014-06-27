@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :render_sidebar, :current_pact, :current_week, :this_week
 
   def render_sidebar
-  	@active_pacts = Pact.where(is_active: true)
+  	@active_pacts = Pact.where(is_active: true).order(:created_at)
 		@current_pact = current_pact
 		@current_week = current_week
     @this_week = this_week
