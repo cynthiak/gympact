@@ -27,7 +27,7 @@
 					<div class="container-fluid">
 						<div class="row">
 
-							<% if message.photo_url %>
+							<% if message.photo_url.to_s != '' %>
 								<div class="message col-md-6">
 									<span class="name">
 										<%= message.user %>
