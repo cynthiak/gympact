@@ -36,7 +36,7 @@ class Pact < ActiveRecord::Base
 	# Gets the week that the pact is on as of today
 	def get_current_week
     today = Date.today
-    week = Week.where(["pact_id = ? and start_date < ? and end_date > ?", self.id, today, today]).first
+    week = Week.where(["pact_id = ? and start_date <= ? and end_date >= ?", self.id, today, today]).first
     if !week
       week = Week.where(["pact_id = ?", self.id]).last
     end
