@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616013334) do
+ActiveRecord::Schema.define(:version => 20140627231206) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(:version => 20140616013334) do
     t.string   "photo_url"
   end
 
-  add_index "messages", ["message", "pact_id"], :name => "index_messages_on_message_and_pact_id", :unique => true
   add_index "messages", ["pact_id"], :name => "index_pact_id_4"
   add_index "messages", ["user_id"], :name => "index_user_id"
 
