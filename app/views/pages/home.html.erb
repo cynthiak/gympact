@@ -9,7 +9,7 @@
 			<% @active_pacts.each do |pact| %>
 				<div class="align-center col-lg-6">
 
-					<% # This command translates to <a href=".../chat/{pact.id}/{week.id}" class="btn btn-active btn-default">{pact.name}</a> --> <a href="domain.com/chat/4/5" class="btn btn-active btn-default">GymPact 2.0</a> %>
+					
 					<%= link_to pact.name, chat_week_path(pact, pact.get_current_week), class: 'btn btn-active btn-default' %> 
 				</div>
 			<% end %>
