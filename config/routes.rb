@@ -7,7 +7,6 @@ Gympact::Application.routes.draw do
 
   # STATIC PAGES
   root :to                      => 'pages#home'
-  get 'about'                   => 'pages#about'
   get 'happybirthday'           => 'pages#happybirthday'
 
 
